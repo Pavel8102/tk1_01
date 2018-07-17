@@ -7,8 +7,8 @@ tk=Tk()
 tk.title("Sample")
 #
 canvas=Canvas(tk)
-canvas["height"]=360
-canvas["width"]=480
+canvas["height"]=600
+canvas["width"]=800
 canvas["background"]="#ddddff"
 canvas["borderwidth"]=2
 canvas.pack()
@@ -16,13 +16,14 @@ canvas.pack()
 
 #
 canvas.create_text(20,20,text="20,10")
-canvas.create_text(460,350,text="460,350")
+canvas.create_text(780,550,text="780,550")
 #
 points=[]
-ay=150
-y0=150
+points2=[]
+ay=290
+y0=290
 x0=50
-x1=470
+x1=790
 dx=10
 #
 for n in range (x0,x1,dx):
@@ -32,6 +33,14 @@ for n in range (x0,x1,dx):
 #
 canvas.create_line(points,fill="blue",smooth=1)
 #
+for n in range (x0,x1,dx):
+    y2=y0-ay*1.2*(math.cos(n*dx))
+    pp2=(n,y2)
+    points2.append(pp2)
+#
+canvas.create_line(points2,fill="red",smooth=1)
+#
+
 y_axe =[]
 yy=(x0,0)
 y_axe.append(yy)
